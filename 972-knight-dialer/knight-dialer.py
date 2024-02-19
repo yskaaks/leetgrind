@@ -12,6 +12,8 @@ class Solution:
         8: [1, 3],
         9: [2, 4],
         }
+        
+        # dp = [[0] * (n+1) for _ in range(10)]    
         memo = {}
 
         def helper(start_digit, length):
