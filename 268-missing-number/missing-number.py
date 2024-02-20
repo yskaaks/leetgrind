@@ -1,10 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        counter = collections.Counter(nums)
+        s = set(nums)
         
-        for num in counter:
-            # if (num + 1) not in counter:
-            #     return num + 1
-            if (num-1) >= 0 and  (num-1) not in counter:
+        for num in s:
+            if (num-1) >= 0 and  (num-1) not in s:
                 return num - 1
-        return max(counter) + 1
+        return max(s) + 1
