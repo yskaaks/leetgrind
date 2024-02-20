@@ -1,2 +1,2 @@
 # leetgrind
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+Attempting to please algo gods
