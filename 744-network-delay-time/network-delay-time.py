@@ -21,11 +21,12 @@ class Solution:
             if curr_path_weight > path_weight[node]:
                 continue
             for neighbour, time in adj_list[node]:
-                new_path_weight = curr_path_weight + time
-                if new_path_weight < path_weight[neighbour]:
-                    path_weight[neighbour] = new_path_weight
-                
-                heapq.heappush(min_heap, (new_path_weight, neighbour))
+                if neighbour not in visited:
+                    new_path_weight = curr_path_weight + time
+                    if new_path_weight < path_weight[neighbour]:
+                        path_weight[neighbour] = new_path_weight
+                    
+                    heapq.heappush(min_heap, (new_path_weight, neighbour))
         
         max_time = max(path_weight.values())
         return max_time if max_time != float("inf") else -1
