@@ -10,13 +10,14 @@ class Solution:
 
         min_heap = [(0, k)] # path_weight, node
         visited = set()
-
+        t = 0
         while min_heap:
             curr_path_weight, node = heapq.heappop(min_heap)
 
             if node in visited:
                 continue
             visited.add(node)
+            t = max(t, curr_path_weight)
 
             if curr_path_weight > path_weight[node]:
                 continue
@@ -28,8 +29,7 @@ class Solution:
                     
                     heapq.heappush(min_heap, (new_path_weight, neighbour))
         
-        max_time = max(path_weight.values())
-        return max_time if max_time != float("inf") else -1
+        return t if len(visited) == n else -1
 
         # def dfs(node, curr_time):
         #     if visited[node]:
