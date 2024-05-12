@@ -8,4 +8,4 @@ select p.product_id, ROUND(
     ) AS average_price
 from prices p
 left join UnitsSold u on u.product_id = p.product_id and u.purchase_date BETWEEN p.start_date and p.end_date
-group by p.product_id
+group by p.product_id;
